@@ -1,68 +1,280 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+#root {
+  max-width: 1992px;
+  min-height: 1080px;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.sidebar {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 26px 20px 560px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  background: rgba(0, 148, 255, 0.15);
+  backdrop-filter: blur(170px);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.search {
+  width: 100%;
+  height: 44px;
+  border-radius: 47px;
+  background: #fff;
+  color: var(--Label-Color-Light-Primary, #000);
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  background-image: url('assets/search.svg');
+  padding: 11px 46px;
+  background-repeat: no-repeat;
+  background-position: 16px;
+  background-size: 22px;
+  opacity: 0.5;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+input {
+  width: 100%;
+}
+
+.card {
+  width: 621px;
+  min-height: 200px;
+  background-color: rgb(255, 136, 0);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #101623 0%, #2a3040 100%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.celsium {
+  color: #fff;
+  font-size: 110px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.41px;
+}
+
+.diapasone {
+  color: #fff;
+  text-align: center;
+  font-size: 21px;
+  font-style: normal;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  line-height: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.location {
+  color: #fff;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0.41px;
+}
+
+.font-normal {
+  color: #fff;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0.36px;
+}
+
+.center-city {
+  color: #fff;
+  text-align: center;
+  font-size: 37px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.185px;
+}
+
+.center-celsium {
+  color: #fff;
+  text-align: center;
+  font-size: 102px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  letter-spacing: -0.51px;
+}
+
+.center-normal {
+  color: #fff;
+  text-align: center;
+  font-family: 'SF Pro Display';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.center-diaposone {
+  color: #fff;
+  text-align: center;
+  font-family: 'SF Pro Display';
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.common-page {
+  width: 1259px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding-left: 40px;
+  padding-right: 19px;
+  padding-bottom: 34px;
+  gap: 37px;
+  display: flex;
+}
+
+.list {
+  display: flex;
+  width: 535px;
+  padding: 14px 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 0.5px solid rgba(255, 255, 255, 0);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(145px);
+}
+
+.list-title {
+  color: #424242;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.weather-details {
+  width: 628px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 63px;
+}
+
+.time-panel {
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(145px);
+}
+
+.time-panel-description {
+  color: #373c42;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-bottom: 8px;
+}
+
+.time-weather-list {
+  padding-top: 8px;
+  width: 100%;
+  height: 122px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 0.2px solid #424240;
+}
+
+.time-weather-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  height: 100%;
+  align-items: center;
+}
+
+.weather-item {
+  display: flex;
+  align-items: center;
+  padding-left: 16.65px;
+  padding-right: 5.25px;
+  color: #424242;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  justify-content: space-between;
+  border-bottom: 0.2px solid #424240;
+}
+
+.time-panel-details {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.time {
+  color: #373c42;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-variant: small-caps;
+}
+
+.cels {
+  color: #373c42;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.11px;
+}
+
+.detail-card {
+  width: 200px;
+  height: 200px;
+  border-radius: 18.505px;
+  border: 0.617px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(145px);
+}
+
+.detail-title {
+  color: #000;
+  font-size: 18.505px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.555px;
+  text-transform: uppercase;
+  opacity: 0.3;
+}
+
+.detail-text {
+  color: #3c3c3c;
+  font-size: 22.205px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24.673px;
+  letter-spacing: 0.222px;
+}
+
+.detail-card:nth-last-child(-n + 3) {
+  margin-top: 53px;
 }

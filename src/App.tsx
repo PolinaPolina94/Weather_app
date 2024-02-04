@@ -1,14 +1,7 @@
-import './App.css';
+import MainPage from './components/MainPage';
 
 function App() {
-
-  return (
-    <>
-      <div>
-        <h1>Forest App</h1>
-      </div>
-    </>
-  );
+  return <MainPage />;
 }
 
 export default App;
