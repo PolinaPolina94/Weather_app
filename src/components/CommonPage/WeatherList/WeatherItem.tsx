@@ -1,4 +1,5 @@
-import image from '../../../assets/Group.svg';
+import image from '@/assets/Group.svg';
+
 function WeatherItem() {
   return (
     <div className="weather-item w-[503px] h-[55px]">

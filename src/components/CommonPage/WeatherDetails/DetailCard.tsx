@@ -1,4 +1,4 @@
-import image from '../../../assets/Group.svg';
+import image from '@/assets/Group.svg';
 
 function DetailCard() {
   return (
