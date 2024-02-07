@@ -47,13 +47,10 @@ input {
 }
 
 .card {
+  position: relative;
   width: 621px;
-  min-height: 200px;
-  background-color: rgb(255, 136, 0);
+  height: 200px;
   border-radius: 14px;
-  background: linear-gradient(180deg, #101623 0%, #2a3040 100%);
-  display: flex;
-  justify-content: space-between;
 }
 
 .celsium {
