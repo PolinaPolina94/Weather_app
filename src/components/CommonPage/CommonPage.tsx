@@ -14,7 +14,7 @@ function CommonPage(props: Temperature) {
   const maxTemperature = props.dailyData.temperature2mMax[0];
   const dailyDataTime = props.dailyData.time;
   const days = dailyDataTime.map((el) => el.toString().split(' ').slice(0, 1).join());
-  console.log(days);
+
   return (
     <div className="common-page">
       <video src={cloudBg} autoPlay loop muted />
@@ -29,7 +29,11 @@ function CommonPage(props: Temperature) {
           </div>
         </div>
         <div className="content">
-          <WeatherList days={days} />
+          <WeatherList
+            days={days}
+            minTemp={props.dailyData.temperature2mMin}
+            maxTemp={props.dailyData.temperature2mMax}
+          />
           <WeatherDetails />
         </div>
         {/* Add padding-bottom 34px */}
