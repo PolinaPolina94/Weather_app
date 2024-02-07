@@ -1,4 +1,4 @@
-import image from '@/assets/Group.svg';
+import imageMoon from '@/assets/Group.svg';
 
 function DetailCard() {
   return (
@@ -13,7 +13,7 @@ function DetailCard() {
       <p className="w-[45px] text-[27px] ml-[20px]">Middle</p>
       <p>
         {' '}
-        <img className="w-[164.9px] mr-[11.54px] ml-[10.87px]" src={image} alt="image" />
+        <img className="w-[165px] mr-[11px] ml-[11px]" src={imageMoon} alt="image" />
       </p>
       <p className="w-[167px] ml-[20px] detail-text">Middle for the rest of the day.</p>
     </div>

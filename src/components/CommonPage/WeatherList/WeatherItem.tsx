@@ -1,4 +1,4 @@
-import image from '@/assets/Group.svg';
+import imageLine from '@/assets/Group.svg';
 
 function WeatherItem({ day, minTemp, maxTemp }: { day: string; minTemp: number; maxTemp: number }) {
   return (
@@ -10,7 +10,7 @@ function WeatherItem({ day, minTemp, maxTemp }: { day: string; minTemp: number; 
       </div>
       <div className="flex">
         <p className="w-[32px]">{minTemp.toFixed()}&deg;</p>
-        <img className="w-[164.9px] mr-[11.54px] ml-[10.87px]" src={image} alt="image" />
+        <img className="w-[164.9px] mr-[11.54px] ml-[10.87px]" src={imageLine} alt="image" />
         <p className="w-[54px]">{maxTemp.toFixed()}&deg;</p>
       </div>
     </div>
