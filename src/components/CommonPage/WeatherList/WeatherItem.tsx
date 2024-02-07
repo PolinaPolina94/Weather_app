@@ -1,10 +1,10 @@
 import image from '@/assets/Group.svg';
 
-function WeatherItem() {
+function WeatherItem({ day }: { day: string }) {
   return (
     <div className="weather-item w-[503px] h-[55px]">
       <div className="flex">
-        <p className="w-[70.915px]">Mon</p>
+        <p className="w-[70.915px]">{day}</p>
         {/* change to img */}
         <p className="w-[31px]">🌞</p>
       </div>

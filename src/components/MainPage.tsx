@@ -17,15 +17,20 @@ function MainPage() {
     getCurrentData();
   }, []);
 
-  console.log(weatherData);
+  // console.log(weatherData);
   return (
     <div className="container font-SF-Pro-Display">
-      <CommonPage />
       {weatherData && (
-        <SideBar
-          currentTemperature={weatherData.current.temperature2m}
-          diffTemperature={weatherData.daily}
-        />
+        <>
+          <CommonPage
+            currentTemperature={weatherData.current.temperature2m}
+            dailyData={weatherData.daily}
+          />
+          <SideBar
+            currentTemperature={weatherData.current.temperature2m}
+            diffTemperature={weatherData.daily}
+          />
+        </>
       )}
     </div>
   );

@@ -1,7 +1,7 @@
 import { DailyData } from '@/types';
 import Card from './Card';
 
-export type Temperature = {
+type Temperature = {
   currentTemperature: number;
   diffTemperature: DailyData;
 };
