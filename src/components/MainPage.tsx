@@ -19,7 +19,7 @@ function MainPage() {
 
   console.log(weatherData);
   return (
-    <div className="flex justify-between w-screen font-SF-Pro-Display">
+    <div className="container font-SF-Pro-Display">
       <CommonPage />
       {weatherData && (
         <SideBar

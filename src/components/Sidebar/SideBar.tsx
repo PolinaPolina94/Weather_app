@@ -16,14 +16,18 @@ function SideBar(props: Temperature) {
       <div className="search">
         <input type="text" placeholder="Search for a city or airport" />
       </div>
-      <div className="flex flex-col gap-[20px] w-full">
+      <div className="flex flex-col gap-[20px]">
         <Card
           temperature={temperature}
           minTemperature={minTemperature}
           maxTemperature={maxTemperature}
         />
         {/* For Kiev */}
-        {/* <Card /> */}
+        <Card
+          temperature={temperature}
+          minTemperature={minTemperature}
+          maxTemperature={maxTemperature}
+        />
       </div>
     </div>
   );
