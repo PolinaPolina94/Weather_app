@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 #root {
-  width: 100%;
-  min-height: 1080px;
+  width: 100vw;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -12,7 +12,6 @@
   max-width: 1920px;
   display: flex;
   margin: auto;
-  /* flex-direction: column; */
 }
 
 .sidebar {
@@ -137,11 +136,14 @@ input {
 
 .common-page {
   position: relative;
-  max-width: 1259px;
+  width: 100%;
+  /* max-width: 1259px; */
   min-height: 1080px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto;
 }
 
 .content {
@@ -150,7 +152,7 @@ input {
   padding-bottom: 34px;
   gap: 37px;
   display: flex;
-  flex-wrap: wrap;
+  height: 100%;
   justify-content: center;
 }
 
@@ -298,10 +300,13 @@ video {
 
 @media (max-width: 1919px) {
   .sidebar {
-    display: none
+    display: none;
   }
-  .common-page {
-    margin: auto;
-    height: 100vh;
+}
+
+@media (max-width: 1258px) {
+  .content {
+    flex-wrap: wrap;
+    height: auto;
   }
 }
