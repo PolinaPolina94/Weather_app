@@ -5,6 +5,14 @@ export type DailyData = {
   temperature2mMin: Float32Array;
 };
 
+export type HourlyData = {
+  time: Date[];
+  temperature2m: Float32Array;
+  precipitationProbability: Float32Array;
+  precipitation: Float32Array;
+  weatherCode: Float32Array;
+};
+
 export type WeatherData = {
   current: {
     time: Date;

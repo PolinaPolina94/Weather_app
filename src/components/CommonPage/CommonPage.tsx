@@ -1,4 +1,4 @@
-import { DailyData } from '@/types';
+import { DailyData, HourlyData } from '@/types';
 import WeatherDetails from './WeatherDetails/WeatherDetails';
 import WeatherList from './WeatherList/WeatherList';
 import cloudBg from '@/assets/cloudsBg.mp4';
@@ -6,6 +6,7 @@ import cloudBg from '@/assets/cloudsBg.mp4';
 type Temperature = {
   currentTemperature: number;
   dailyData: DailyData;
+  hourlyData: HourlyData;
 };
 
 function CommonPage(props: Temperature) {
@@ -14,6 +15,12 @@ function CommonPage(props: Temperature) {
   const maxTemperature = props.dailyData.temperature2mMax[0];
   const dailyDataTime = props.dailyData.time;
   const days = dailyDataTime.map((el) => el.toString().split(' ').slice(0, 1).join());
+
+  const hourlyDataTime = props.hourlyData.time.slice(0, 10);
+  const hourlyDataTemp = props.hourlyData.temperature2m.slice(0, 10);
+
+  const currentDate = new Date();
+  console.log(currentDate.getHours(), currentDate.getMinutes());
 
   return (
     <div className="common-page">
@@ -34,7 +41,7 @@ function CommonPage(props: Temperature) {
             minTemp={props.dailyData.temperature2mMin}
             maxTemp={props.dailyData.temperature2mMax}
           />
-          <WeatherDetails />
+          <WeatherDetails hourlyDataTime={hourlyDataTime} hourlyDataTemp={hourlyDataTemp} />
         </div>
         {/* Add padding-bottom 34px */}
       </div>

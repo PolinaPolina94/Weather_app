@@ -1,9 +1,15 @@
-function TimeWeatherItem() {
+type HourItem = {
+  hour: string;
+  hourlyDataTemp: number;
+};
+
+function TimeWeatherItem({ hour, hourlyDataTemp }: HourItem) {
+  console.log(hourlyDataTemp);
   return (
     <div className="time-weather-item">
-      <p className="time">2PM</p>
+      <p className="time">{hour}</p>
       <p className="w-[28px] h-[28px]">🌛</p>
-      <p className="cels w-[31px] h-[26px]">21</p>
+      <p className="cels w-[31px] h-[26px]">{hourlyDataTemp.toFixed()}&deg;</p>
     </div>
   );
 }
