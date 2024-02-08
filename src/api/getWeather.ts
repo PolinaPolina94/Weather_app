@@ -1,5 +1,9 @@
 import { fetchWeatherApi } from 'openmeteo';
 
+const api = {
+  API_URL: import.meta.env.VITE_APP_API_URL,
+};
+
 export async function getWeather(lat: number, lon: number) {
   const params = {
     latitude: lat,
@@ -18,7 +22,8 @@ export async function getWeather(lat: number, lon: number) {
     timezone: 'auto',
     forecast_days: 10,
   };
-  const url = 'https://api.open-meteo.com/v1/forecast';
+
+  const url = api.API_URL;
 
   const responses = await fetchWeatherApi(url, params);
   const range = (start: number, stop: number, step: number) =>
