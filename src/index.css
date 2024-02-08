@@ -260,32 +260,44 @@ input {
 }
 
 .detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 200px;
   height: 200px;
-  border-radius: 18.505px;
+  border-radius: 18px;
   border: 0.617px solid rgba(255, 255, 255, 0.25);
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(145px);
+  padding-bottom: 15px;
 }
 
 .detail-title {
   color: #000;
-  font-size: 18.505px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: 0.555px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   opacity: 0.3;
 }
 
-.detail-text {
-  color: #3c3c3c;
-  font-size: 22.205px;
+.detail-value {
+  color: #000;
+  font-size: 35px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24.673px;
-  letter-spacing: 0.222px;
+  line-height: normal;
+}
+
+.detail-description {
+  color: #3c3c3c;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.2px;
 }
 
 .detail-card:nth-last-child(-n + 3) {

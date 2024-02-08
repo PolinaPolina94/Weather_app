@@ -26,6 +26,7 @@ function MainPage() {
             currentTemperature={weatherData.current.temperature2m}
             dailyData={weatherData.daily}
             hourlyData={weatherData.hourly}
+            currentData={weatherData.current}
           />
           <SideBar
             currentTemperature={weatherData.current.temperature2m}
