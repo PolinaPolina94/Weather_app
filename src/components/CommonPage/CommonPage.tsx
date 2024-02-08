@@ -19,6 +19,7 @@ function CommonPage(props: Temperature) {
   const hourlyDataTime = props.hourlyData.time.slice(0, 10);
   const hourlyDataTemp = props.hourlyData.temperature2m.slice(0, 10);
 
+  // Show time at the moment
   const currentDate = new Date();
   console.log(currentDate.getHours(), currentDate.getMinutes());
 

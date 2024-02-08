@@ -16,6 +16,8 @@ function MainPage() {
     getCurrentData();
   }, []);
 
+  console.log(weatherData);
+
   return (
     <div className="container font-SF-Pro-Display">
       {weatherData && (

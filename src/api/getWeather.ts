@@ -4,9 +4,21 @@ export async function getWeather(lat: number, lon: number) {
   const params = {
     latitude: lat,
     longitude: lon,
-    current: ['temperature_2m', 'apparent_temperature', 'is_day', 'weather_code'],
-    hourly: ['temperature_2m', 'precipitation_probability', 'precipitation', 'weather_code'],
-    daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min'],
+    current: [
+      'temperature_2m',
+      'relative_humidity_2m',
+      'apparent_temperature',
+      'is_day',
+      'weather_code',
+    ],
+    hourly: [
+      'temperature_2m',
+      'precipitation_probability',
+      'precipitation',
+      'weather_code',
+      'visibility',
+    ],
+    daily: ['weather_code', 'temperature_2m_max', 'temperature_2m_min', 'sunrise', 'uv_index_max'],
     timeformat: 'unixtime',
     timezone: 'auto',
     forecast_days: 10,
@@ -29,9 +41,7 @@ export async function getWeather(lat: number, lon: number) {
       temperature2m: current.variables(0)!.value(),
       apparentTemperature: current.variables(1)!.value(),
       isDay: current.variables(2)!.value(),
-      precipitation: current.variables(3)!.value(),
       weatherCode: current.variables(4)!.value(),
-      cloudCover: current.variables(5)!.value(),
       windSpeed10m: current.variables(6)!.value(),
     },
     hourly: {
@@ -39,7 +49,6 @@ export async function getWeather(lat: number, lon: number) {
         (t) => new Date((t + utcOffsetSeconds) * 1000)
       ),
       temperature2m: hourly.variables(0)!.valuesArray()!,
-      precipitationProbability: hourly.variables(1)!.valuesArray()!,
       precipitation: hourly.variables(2)!.valuesArray()!,
       weatherCode: hourly.variables(3)!.valuesArray()!,
     },
@@ -50,13 +59,10 @@ export async function getWeather(lat: number, lon: number) {
       weatherCode: daily.variables(0)!.valuesArray()!,
       temperature2mMax: daily.variables(1)!.valuesArray()!,
       temperature2mMin: daily.variables(2)!.valuesArray()!,
-      apparentTemperatureMax: daily.variables(3)!.valuesArray()!,
-      apparentTemperatureMin: daily.variables(4)!.valuesArray()!,
-      sunrise: daily.variables(5)!.valuesArray()!,
-      uvIndexMax: daily.variables(6)!.valuesArray()!,
+      sunrise: daily.variables(2)!.valuesArray()!,
+      uvIndexMax: daily.variables(0)!.valuesArray()!,
       precipitationSum: daily.variables(7)!.valuesArray()!,
       showersSum: daily.variables(8)!.valuesArray()!,
-      windSpeed10mMax: daily.variables(9)!.valuesArray()!,
     },
   };
 }

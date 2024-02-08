@@ -4,7 +4,6 @@ type HourItem = {
 };
 
 function TimeWeatherItem({ hour, hourlyDataTemp }: HourItem) {
-  console.log(hourlyDataTemp);
   return (
     <div className="time-weather-item">
       <p className="time">{hour}</p>

@@ -3,12 +3,12 @@ export type DailyData = {
   weatherCode: Float32Array;
   temperature2mMax: Float32Array;
   temperature2mMin: Float32Array;
+  uvIndexMax: Float32Array;
 };
 
 export type HourlyData = {
   time: Date[];
   temperature2m: Float32Array;
-  precipitationProbability: Float32Array;
   precipitation: Float32Array;
   weatherCode: Float32Array;
 };
@@ -30,12 +30,10 @@ export type WeatherData = {
     uvIndexMax: Float32Array;
     precipitationSum: Float32Array;
     showersSum: Float32Array;
-    windSpeed10mMax: Float32Array;
   };
   hourly: {
     time: Date[];
     temperature2m: Float32Array;
-    precipitationProbability: Float32Array;
     precipitation: Float32Array;
     weatherCode: Float32Array;
   };

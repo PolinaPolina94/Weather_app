@@ -13,8 +13,6 @@ function WeatherDetails({ hourlyDataTime, hourlyDataTemp }: HourlyData) {
   } as const;
   const houres = hourlyDataTime.map((el) => el.toLocaleString('en-US', options));
 
-  console.log(hourlyDataTemp);
-
   return (
     <div className="weather-details">
       <TimePanel houres={houres} hourlyDataTemp={hourlyDataTemp} />
