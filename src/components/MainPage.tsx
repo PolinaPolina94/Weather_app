@@ -5,27 +5,34 @@ import { getWeather } from '@/api/getWeather';
 import { WeatherData } from '@/types';
 
 function MainPage() {
-  const [weatherData, settWeatherData] = useState<WeatherData | null>(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     const getCurrentData = async () => {
       // Minsk coordinates
       const weatherData = await getWeather(53.9, 27.5667);
-      console.log(weatherData);
-      settWeatherData(weatherData);
+      setWeatherData(weatherData);
     };
     getCurrentData();
   }, []);
 
   console.log(weatherData);
+
   return (
     <div className="container font-SF-Pro-Display">
-      <CommonPage />
       {weatherData && (
-        <SideBar
-          currentTemperature={weatherData.current.temperature2m}
-          diffTemperature={weatherData.daily}
-        />
+        <>
+          <CommonPage
+            currentTemperature={weatherData.current.temperature2m}
+            dailyData={weatherData.daily}
+            hourlyData={weatherData.hourly}
+            currentData={weatherData.current}
+          />
+          <SideBar
+            currentTemperature={weatherData.current.temperature2m}
+            diffTemperature={weatherData.daily}
+          />
+        </>
       )}
     </div>
   );
